@@ -67,7 +67,9 @@ def promimage():
                         <title>Привет, Яндекс!</title>
                       </head>
                       <body>
-                        <h1>Привет, Яндекс!</h1>
+                       <meta charset="utf-8">
+                    <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
+                    <h1>Привет, Яндекс!</h1>
                         <div class="alert alert-primary" role="alert">
                          Переезжайте на марс
                         </div>
