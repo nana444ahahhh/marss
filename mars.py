@@ -31,7 +31,6 @@ def promote():
                         <h1>Мы сделаем обитаемыми безжизненные пока планеты.</h1>
                         <h1>И начнем с Марса!</h1>
                         <h1>Присоединяйся!</h1>
-
                       </body>
                     </html>"""
 
@@ -47,7 +46,6 @@ def image():
                       <body>
                         <h1>Жди нас, Марс!</h1>
                         <
-
                       </body>
                     </html>
     <img src="{url_for('static', filename='c2c17f31b88d4ea800bfe289258d40b8.jpg')}" 
@@ -90,7 +88,6 @@ def promimage():
                         </div>
                       </body>
                     </html>
-
                    '''
 
 
@@ -149,36 +146,20 @@ def form_sample():
                                     </div>
                                      <label for="form-group form-check">Укажите работу</label>
                                     <div class="form-group form-check">
-
                                         <input type="checkbox" class="form-check-input" id="acceptRules" name="accept">
-
                                         <label class="form-check-label" for="acceptRules">врач</label>
-
-
-
                                     </div>
                                      <div class="form-group form-check">
-
                                         <input type="checkbox" class="form-check-input" id="acceptRules" name="accept">
-
                                         <label class="form-check-label" for="acceptRules">инженер-исследователь</label>
-
-
-
                                     </div>
                                       <div class="form-group">
                                         <label for="photo">Приложите фотографию</label>
                                         <input type="file" class="form-control-file" id="photo" name="file">
                                     </div>
-
                                      <div class="туц">
-
                                         <input type="checkbox" class="ready?" id="acceptRules" name="accept">
-
                                         <label class="form-check-label" for="acceptRules">готовы ли вы остаться на марсе?</label>
-
-
-
                                     </div>
                                     <button type="submit" class="btn btn-primary">Записаться</button>
                                 </form>
@@ -231,12 +212,11 @@ def choicce(planetname):
                                 </div>
                               </body>
                             </html>
-
                            '''
 
 
 @app.route('/choice/<nickname>/<int:level>/<float:rating>')
-def choicce(nickname,level,rating):
+def choice(nickname, level, rating):
     if request.method == 'GET':
         return f'''
                             <html lang="en">
@@ -262,15 +242,14 @@ def choicce(nickname,level,rating):
                                 <div class="alert alert-danger" role="alert">
                                   ваш рейтинг составляет {rating}
                                 </div>
-                                <div class="alert alert-info" role="alert">
-                                  легче зарабатывать
+                                <div class="alert alert-light" role="light">
+                                  удачи вам в освоении!!!
                                 </div>
-                                <div class="alert alert-dark" role="alert">
-                                  ты будешь Богаче!
                                 </div>
                               </body>
                             </html>
-
                            '''
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
