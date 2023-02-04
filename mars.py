@@ -235,5 +235,42 @@ def choicce(planetname):
                            '''
 
 
+@app.route('/choice/<nickname>/<int:level>/<float:rating>')
+def choicce(nickname,level,rating):
+    if request.method == 'GET':
+        return f'''
+                            <html lang="en">
+                              <head>
+                                <meta charset="utf-8">
+                                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                                <link rel="stylesheet" 
+                                href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
+                                integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
+                                crossorigin="anonymous">
+                                <title>Реклама {nickname}!</title>
+                              </head>
+                              <body>
+                               <meta charset="utf-8">
+                            <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
+                            <h1>Результаты отбора</h1>
+                                <div class="alert alert-primary" role="alert">
+                                кандидат {nickname}
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                 ваш рейтинг после {level} этапа отбора
+                                </div>
+                                <div class="alert alert-danger" role="alert">
+                                  ваш рейтинг составляет {rating}
+                                </div>
+                                <div class="alert alert-info" role="alert">
+                                  легче зарабатывать
+                                </div>
+                                <div class="alert alert-dark" role="alert">
+                                  ты будешь Богаче!
+                                </div>
+                              </body>
+                            </html>
+
+                           '''
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
